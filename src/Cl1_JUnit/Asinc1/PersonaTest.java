@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+
 public class PersonaTest {
     @Test
     public void testNombreCompleto () {
@@ -15,8 +16,8 @@ public class PersonaTest {
         //CUANDO
 
         //ENTONCES
-        Assertions.assertEquals("Alvarez, Juan Carlos", juan.mostrarNombreCompleto() );
-        Assertions.assertEquals("Alvarez, Matias", matias.mostrarNombreCompleto());
+        Assertions.assertEquals("Alvarez, Juan Carlos", juan.getNombreCompleto() );//Mediante getter
+        Assertions.assertEquals("Alvarez, Matias", matias.mostrarNombreCompleto());//Mediante método
     }
 
     @Test
@@ -26,11 +27,10 @@ public class PersonaTest {
         //CUANDO
 
         //ENTONCES
-        Persona persona1 = new Persona("Pedro", "Gomez", "pedro@example.com", 6);
-        Assertions.assertFalse(persona1.esMayorDeEdad(fechaHoy));
-
-        Persona persona2 = new Persona("Ana", "Lopez", "ana@example.com", 19);
-        Assertions.assertFalse(persona2.esMayorDeEdad(fechaHoy));
+        Persona juan = new Persona("Juan Carlos", "Alvarez", "alseloes@gmail.com", 41);
+        Persona matias = new Persona("Matias","Alvarez", "email@gmail.com", 14);
+        Assertions.assertFalse(juan.esMayorDeEdad(fechaHoy));
+        Assertions.assertFalse(matias.esMayorDeEdad(fechaHoy));
 
 
 
