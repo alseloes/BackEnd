@@ -19,7 +19,7 @@ public class Persona {
 
     //Getters
 
-    public String getNombreCompleto() {
+     public String getNombreCompleto() {
         return apellido + ", " + nombre;
     }
 

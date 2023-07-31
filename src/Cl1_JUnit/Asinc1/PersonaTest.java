@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-
 public class PersonaTest {
     @Test
     public void testNombreCompleto () {
@@ -24,14 +23,13 @@ public class PersonaTest {
     public void testEsMayorDeEdad () {
         //DADO
         LocalDate fechaHoy = LocalDate.of(2021, 9, 21);
+        Persona juan = new Persona("Juan Carlos", "Alvarez", "alseloes@gmail.com", 41);
+        Persona matias = new Persona("Matias","Alvarez", "email@gmail.com", 14);
         //CUANDO
 
         //ENTONCES
-        Persona juan = new Persona("Juan Carlos", "Alvarez", "alseloes@gmail.com", 41);
-        Persona matias = new Persona("Matias","Alvarez", "email@gmail.com", 14);
         Assertions.assertFalse(juan.esMayorDeEdad(fechaHoy));
         Assertions.assertFalse(matias.esMayorDeEdad(fechaHoy));
-
 
 
     }
