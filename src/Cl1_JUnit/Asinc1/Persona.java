@@ -4,11 +4,12 @@ import java.time.LocalDate;
 
 public class Persona {
     private String nombre;
-    private String apellido;
+    private  String apellido;
     private String email;
     private int edad;
 
-    //Constructor
+    //CONSTRUCTOR
+
 
     public Persona(String nombre, String apellido, String email, int edad) {
         this.nombre = nombre;
@@ -17,55 +18,46 @@ public class Persona {
         this.edad = edad;
     }
 
-    //Getters
-
-     public String getNombreCompleto() {
-        return apellido + ", " + nombre;
-    }
+    //GETTERS Y SETTERS
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
         return apellido;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-
-    //Setters
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    //Metodos
-
-    public String mostrarNombreCompleto (){
-        return this.apellido + ", " + this.nombre;
+    public String nombreCompleto () {
+        return this.getApellido()+ ", " + this.getNombre();
     }
 
     public boolean esMayorDeEdad (LocalDate fechaHoy) {
-        LocalDate fechaNacimiento = fechaHoy.minusYears(18);
+        LocalDate fechaNacimiento = fechaHoy.minusYears(edad);
         return fechaNacimiento.isBefore(fechaHoy.minusYears(18));
     }
 }

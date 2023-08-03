@@ -7,30 +7,26 @@ import java.time.LocalDate;
 
 public class PersonaTest {
     @Test
-    public void testNombreCompleto () {
+    public void nombreCompletoCorrecto () {
         //DADO
-        Persona juan = new Persona("Juan Carlos", "Alvarez", "alseloes@gmail.com", 41);
-        Persona matias = new Persona("Matias","Alvarez", "email@gmail.com", 14);
-
+        Persona juan = new Persona("Juan Carlos", "Alvarez", "correo@correo.com",41);
         //CUANDO
 
         //ENTONCES
-        Assertions.assertEquals("Alvarez, Juan Carlos", juan.getNombreCompleto() );//Mediante getter
-        Assertions.assertEquals("Alvarez, Matias", matias.mostrarNombreCompleto());//Mediante método
+        Assertions.assertEquals("Alvarez, Juan Carlos", juan.nombreCompleto());
     }
 
     @Test
-    public void testEsMayorDeEdad () {
+    public void esMayorEdad () {
         //DADO
-        LocalDate fechaHoy = LocalDate.of(2021, 9, 21);
-        Persona juan = new Persona("Juan Carlos", "Alvarez", "alseloes@gmail.com", 41);
-        Persona matias = new Persona("Matias","Alvarez", "email@gmail.com", 14);
+        Persona juan1 = new Persona("Juan Carlos", "Alvarez", "correo@correo.com",41);
+        Persona matias = new Persona( "Matias", "Alvarez", "sucorreo@correo.com", 14);
+
         //CUANDO
-
+        LocalDate fechaHoy = LocalDate.of(2021, 9, 21);
         //ENTONCES
-        Assertions.assertFalse(juan.esMayorDeEdad(fechaHoy));
-        Assertions.assertFalse(matias.esMayorDeEdad(fechaHoy));
-
+        Assertions.assertTrue(juan1.esMayorDeEdad(fechaHoy)); //Empleando assertTrue
+        Assertions.assertEquals(false, matias.esMayorDeEdad(fechaHoy)); // Empleando assertEquals
 
     }
 
